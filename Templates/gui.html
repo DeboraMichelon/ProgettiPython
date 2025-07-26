@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generatore Numero Impegnativa</title>
+    <style>
+        .button {
+        border: none;
+        color: white;
+        padding: 15px 30px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 15px 10px;
+        cursor: pointer;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }.button {background-color: #008CBA;}
+        .write {
+            color: aliceblue; 
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body style="background-color:midnightblue">
+    <h1 class="h1 write">Generatore Numero Impegnativa (Ricetta Rossa)</h1>
+    <label class="label write">Scegli per quale sub-region vuoi generare il numero impegnativa:</label>
+    <br>
+    <form action="{{ url_for('NumImpegnativa')}}" method="post">
+        <div>
+            <input type="submit" name="VEN" value="Veneto" class="button button"></input>
+            <input type="submit" name="LAZ" value="Lazio" class="button button"></input>
+            <input type="submit" name="PIE" value="Piemonte" class="button button"></input>
+            <input type="submit" name="VDA" value="Valle d'Aosta" class="button button"></input>
+        </div>
+    </form>
+     {% if numero and subregion %}
+        <div class="write">
+            <p>Ecco qui una ricetta rossa per la subregion: {{subregion}}</p>
+            <p>Numero impegnativa generato: {{numero}}</p>
+        </div>
+    {% endif %}
+</body>
+</html>
