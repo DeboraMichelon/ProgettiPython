@@ -1,0 +1,244 @@
+Include Region.ITXX.Main
+Class Region.ITXX.Convert.TC411992 Extends websys.DataConversion.Abstract
+{
+Parameter DESCRIPTION = "TC-411992: Adozione e riorganizzazione delle nuove osservazioni per la rilevazione della pressione arteriosa con metodi invasivi";
+Parameter MULTIPROCESS = 0;
+ClassMethod Main() As %Status
+{
+   /// This conversion routine will XML load a translation type forcibly due to once only nature of the code table
+   set sc=$$$OK
+   set sc=$$$ADDSC(sc,$$$LoadStreamXData($CLASSNAME(), "Translation1", "9A19FAC2-018D-11EF-92A9-005056B46D6B"))
+   set sc=$$$ADDSC(sc,$$$LoadStreamXData($CLASSNAME(), "Translation2", "045CFB84-61B6-11E7-91FC-5056B4276C00"))
+   set sc=$$$ADDSC(sc,$$$LoadStreamXData($CLASSNAME(), "Translation3", "64BB79A0-018D-11EF-92AA-005056B46D6B"))
+   set sc=$$$ADDSC(sc,$$$LoadStreamXData($CLASSNAME(), "Translation4", "75A2CDB8-018D-11EF-92AA-005056B46D6B"))
+   set sc=$$$ADDSC(sc,$$$LoadStreamXData($CLASSNAME(), "Translation5", "04659690-61B6-11E7-91FC-5056B4276C00"))
+   set sc=$$$ADDSC(sc,$$$LoadStreamXData($CLASSNAME(), "Translation6", "A9DA2FE0-018D-11EF-92A9-005056B46D6B"))
+   set sc=$$$ADDSC(sc,$$$LoadStreamXData($CLASSNAME(), "Translation7", "B93CB80E-018D-11EF-92A9-005056B46D6B"))
+   set sc=$$$ADDSC(sc,$$$LoadStreamXData($CLASSNAME(), "Translation8", "FA151250-018C-11EF-92AA-005056B46D6B"))
+   quit sc
+}
+
+ XData Translation1
+{
+   <?xml version="1.0" encoding="UTF-8"?>
+<Export>
+  <websys.TranslationEPR GUID="9A19FAC2-018D-11EF-92A9-005056B46D6B">
+    <ChildTranslationEPRTrans>
+      <TranslationEPRTrans GUID="F5CBD5E9-7458-11F0-98CB-005056B4CACA">
+        <PropertyTextLang>ECE003D1-C97D-4C8A-9D59-BCBD85F32763</PropertyTextLang>
+        <PropertyTextTrans>Pressione arteriosa sistolica invasiva (1)</PropertyTextTrans>
+      </TranslationEPRTrans>
+    </ChildTranslationEPRTrans>
+    <ClassName>User.MRCObservationItem</ClassName>
+    <PropertyName>ITMDesc</PropertyName>
+    <PropertyText>Blood Pressure, Systolic (Invasive) 1</PropertyText>
+    <TextInUse>1</TextInUse>
+  </websys.TranslationEPR>
+  <Information GUID="9A19FAC2-018D-11EF-92A9-005056B46D6B">
+    <Id>211127</Id>
+    <ClassName>websys.TranslationEPR</ClassName>
+    <Description>211127</Description>
+    <Content>
+      <Version Class="websys.TranslationEPR">0</Version>
+      <Version Class="websys.TranslationEPRTrans">0</Version>
+    </Content>
+  </Information>
+</Export>
+}
+
+ XData Translation2
+{
+   <?xml version="1.0" encoding="UTF-8"?>
+<Export>
+  <websys.TranslationEPR GUID="045CFB84-61B6-11E7-91FC-5056B4276C00">
+    <ChildTranslationEPRTrans>
+      <TranslationEPRTrans GUID="3ABB824B-7459-11F0-98CB-005056B4CACA">
+        <PropertyTextLang>ECE003D1-C97D-4C8A-9D59-BCBD85F32763</PropertyTextLang>
+        <PropertyTextTrans>Pressione arteriosa sistolica invasiva (2)</PropertyTextTrans>
+      </TranslationEPRTrans>
+    </ChildTranslationEPRTrans>
+    <ClassName>User.MRCObservationItem</ClassName>
+    <PropertyName>ITMDesc</PropertyName>
+    <PropertyText>Arterial Systolic</PropertyText>
+    <TextInUse>1</TextInUse>
+  </websys.TranslationEPR>
+  <Information GUID="045CFB84-61B6-11E7-91FC-5056B4276C00">
+    <Id>188841</Id>
+    <ClassName>websys.TranslationEPR</ClassName>
+    <Description>188841</Description>
+    <Content>
+      <Version Class="websys.TranslationEPR">0</Version>
+      <Version Class="websys.TranslationEPRTrans">0</Version>
+    </Content>
+  </Information>
+</Export>
+}
+
+ XData Translation3
+{
+   <?xml version="1.0" encoding="UTF-8"?>
+<Export>
+  <websys.TranslationEPR GUID="64BB79A0-018D-11EF-92AA-005056B46D6B">
+    <ChildTranslationEPRTrans>
+      <TranslationEPRTrans GUID="15FF49DF-7459-11F0-98CB-005056B4CACA">
+        <PropertyTextLang>ECE003D1-C97D-4C8A-9D59-BCBD85F32763</PropertyTextLang>
+        <PropertyTextTrans>Pressione arteriosa media invasiva calcolata (1)</PropertyTextTrans>
+      </TranslationEPRTrans>
+    </ChildTranslationEPRTrans>
+    <ClassName>User.MRCObservationItem</ClassName>
+    <PropertyName>ITMDesc</PropertyName>
+    <PropertyText>Blood Pressure, Calculated Mean (Invasive) 1</PropertyText>
+    <TextInUse>1</TextInUse>
+  </websys.TranslationEPR>
+  <Information GUID="64BB79A0-018D-11EF-92AA-005056B46D6B">
+    <Id>211150</Id>
+    <ClassName>websys.TranslationEPR</ClassName>
+    <Description>211150</Description>
+    <Content>
+      <Version Class="websys.TranslationEPR">0</Version>
+      <Version Class="websys.TranslationEPRTrans">0</Version>
+    </Content>
+  </Information>
+</Export>
+}
+
+ XData Translation4
+{
+   <?xml version="1.0" encoding="UTF-8"?>
+<Export>
+  <websys.TranslationEPR GUID="75A2CDB8-018D-11EF-92AA-005056B46D6B">
+    <ChildTranslationEPRTrans>
+      <TranslationEPRTrans GUID="56BE3A04-7459-11F0-98CB-005056B4CACA">
+        <PropertyTextLang>ECE003D1-C97D-4C8A-9D59-BCBD85F32763</PropertyTextLang>
+        <PropertyTextTrans> Pressione arteriosa media invasiva visualizzata (2)</PropertyTextTrans>
+      </TranslationEPRTrans>
+    </ChildTranslationEPRTrans>
+    <ClassName>User.MRCObservationItem</ClassName>
+    <PropertyName>ITMDesc</PropertyName>
+    <PropertyText>Blood Pressure, Displayed Mean (Invasive) 2</PropertyText>
+    <TextInUse>1</TextInUse>
+  </websys.TranslationEPR>
+  <Information GUID="75A2CDB8-018D-11EF-92AA-005056B46D6B">
+    <Id>211151</Id>
+    <ClassName>websys.TranslationEPR</ClassName>
+    <Description>211151</Description>
+    <Content>
+      <Version Class="websys.TranslationEPR">0</Version>
+      <Version Class="websys.TranslationEPRTrans">0</Version>
+    </Content>
+  </Information>
+</Export>
+}
+
+ XData Translation5
+{
+   <?xml version="1.0" encoding="UTF-8"?>
+<Export>
+  <websys.TranslationEPR GUID="04659690-61B6-11E7-91FC-5056B4276C00">
+    <ChildTranslationEPRTrans>
+      <TranslationEPRTrans GUID="497265D1-7459-11F0-98CB-005056B4CACA">
+        <PropertyTextLang>ECE003D1-C97D-4C8A-9D59-BCBD85F32763</PropertyTextLang>
+        <PropertyTextTrans>Pressione arteriosa diastolica invasiva (2)</PropertyTextTrans>
+      </TranslationEPRTrans>
+    </ChildTranslationEPRTrans>
+    <ClassName>User.MRCObservationItem</ClassName>
+    <PropertyName>ITMDesc</PropertyName>
+    <PropertyText>Arterial Diastolic</PropertyText>
+    <TextInUse>1</TextInUse>
+  </websys.TranslationEPR>
+  <Information GUID="04659690-61B6-11E7-91FC-5056B4276C00">
+    <Id>188986</Id>
+    <ClassName>websys.TranslationEPR</ClassName>
+    <Description>188986</Description>
+    <Content>
+      <Version Class="websys.TranslationEPR">0</Version>
+      <Version Class="websys.TranslationEPRTrans">0</Version>
+    </Content>
+  </Information>
+</Export>
+}
+
+ XData Translation6
+{
+   <?xml version="1.0" encoding="UTF-8"?>
+<Export>
+  <websys.TranslationEPR GUID="A9DA2FE0-018D-11EF-92A9-005056B46D6B">
+    <ChildTranslationEPRTrans>
+      <TranslationEPRTrans GUID="253CA66B-7459-11F0-98CB-005056B4CACA">
+        <PropertyTextLang>ECE003D1-C97D-4C8A-9D59-BCBD85F32763</PropertyTextLang>
+        <PropertyTextTrans>Pressione arteriosa media invasiva visualizzata (1)</PropertyTextTrans>
+      </TranslationEPRTrans>
+    </ChildTranslationEPRTrans>
+    <ClassName>User.MRCObservationItem</ClassName>
+    <PropertyName>ITMDesc</PropertyName>
+    <PropertyText>Blood Pressure, Displayed Mean (Invasive) 1</PropertyText>
+    <TextInUse>1</TextInUse>
+  </websys.TranslationEPR>
+  <Information GUID="A9DA2FE0-018D-11EF-92A9-005056B46D6B">
+    <Id>211128</Id>
+    <ClassName>websys.TranslationEPR</ClassName>
+    <Description>211128</Description>
+    <Content>
+      <Version Class="websys.TranslationEPR">0</Version>
+      <Version Class="websys.TranslationEPRTrans">0</Version>
+    </Content>
+  </Information>
+</Export>
+}
+
+ XData Translation7
+{
+   <?xml version="1.0" encoding="UTF-8"?>
+<Export>
+  <websys.TranslationEPR GUID="B93CB80E-018D-11EF-92A9-005056B46D6B">
+    <ChildTranslationEPRTrans>
+      <TranslationEPRTrans GUID="0A4007F1-7459-11F0-98CB-005056B4CACA">
+        <PropertyTextLang>ECE003D1-C97D-4C8A-9D59-BCBD85F32763</PropertyTextLang>
+        <PropertyTextTrans>Pressione arteriosa diastolica invasiva (1)</PropertyTextTrans>
+      </TranslationEPRTrans>
+    </ChildTranslationEPRTrans>
+    <ClassName>User.MRCObservationItem</ClassName>
+    <PropertyName>ITMDesc</PropertyName>
+    <PropertyText>Blood Pressure, Diastolic (Invasive) 1</PropertyText>
+    <TextInUse>1</TextInUse>
+  </websys.TranslationEPR>
+  <Information GUID="B93CB80E-018D-11EF-92A9-005056B46D6B">
+    <Id>211129</Id>
+    <ClassName>websys.TranslationEPR</ClassName>
+    <Description>211129</Description>
+    <Content>
+      <Version Class="websys.TranslationEPR">0</Version>
+      <Version Class="websys.TranslationEPRTrans">0</Version>
+    </Content>
+  </Information>
+</Export>
+}
+
+ XData Translation8
+{
+   <?xml version="1.0" encoding="UTF-8"?>
+<Export>
+  <websys.TranslationEPR GUID="FA151250-018C-11EF-92AA-005056B46D6B">
+    <ChildTranslationEPRTrans>
+      <TranslationEPRTrans GUID="6541BCB4-7459-11F0-98CB-005056B4CACA">
+        <PropertyTextLang>ECE003D1-C97D-4C8A-9D59-BCBD85F32763</PropertyTextLang>
+        <PropertyTextTrans>Pressione arteriosa media invasiva calcolata (2)</PropertyTextTrans>
+      </TranslationEPRTrans>
+    </ChildTranslationEPRTrans>
+    <ClassName>User.MRCObservationItem</ClassName>
+    <PropertyName>ITMDesc</PropertyName>
+    <PropertyText>Blood Pressure, Calculated Mean (Invasive) 2</PropertyText>
+    <TextInUse>1</TextInUse>
+  </websys.TranslationEPR>
+  <Information GUID="FA151250-018C-11EF-92AA-005056B46D6B">
+    <Id>211144</Id>
+    <ClassName>websys.TranslationEPR</ClassName>
+    <Description>211144</Description>
+    <Content>
+      <Version Class="websys.TranslationEPR">0</Version>
+      <Version Class="websys.TranslationEPRTrans">0</Version>
+    </Content>
+  </Information>
+</Export>
+}
+}

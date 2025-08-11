@@ -61,13 +61,18 @@ def GenCR():
             # Estrai il contenuto di un tag specifico
             try:
                 root = ET.fromstring(xml_content)
-                # Prova TranslationType
+                # Cerca TranslationType
                 elem = root.find('.//websys.TranslationType')
                 if elem is not None and 'GUID' in elem.attrib:
                     guid = elem.attrib['GUID']
-                else:
-                    # Prova DictionaryTranslated
+                 # Cerca DictionaryTranslated solo se non già trovato
+                if guid is None:
                     elem = root.find('.//websys.DictionaryTranslated')
+                    if elem is not None and 'GUID' in elem.attrib:
+                        guid = elem.attrib['GUID']
+                # Cerca TranslationEPR solo se non già trovato
+                if guid is None:
+                    elem = root.find('.//websys.TranslationEPR')
                     if elem is not None and 'GUID' in elem.attrib:
                         guid = elem.attrib['GUID']
             except Exception as e:
