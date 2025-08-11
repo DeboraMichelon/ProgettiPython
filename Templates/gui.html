@@ -14,17 +14,19 @@
         margin: 15px 10px;
         cursor: pointer;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }.button {background-color: #008CBA;}
+        background-color: #008CBA;
+        }
         .write {
-            color: aliceblue; 
+            color: whitesmoke; 
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-size: 16px;
+            margin: 15px 10px;
         }
     </style>
 </head>
 
-<body style="background-color:midnightblue">
-    <h1 class="h1 write">Generatore Numero Impegnativa (Ricetta Rossa)</h1>
+<body>
+    <h1 class="h1 write" style="font-size: 20px; margin: 15px 10px;">Generatore Numero Impegnativa (Ricetta Rossa)</h1>
     <label class="label write">Scegli per quale sub-region vuoi generare il numero impegnativa:</label>
     <br>
     <form action="{{ url_for('NumImpegnativa')}}" method="post">

@@ -1,0 +1,1404 @@
+Include Region.ITXX.Main
+Class Region.ITXX.Convert.TC475114 Extends websys.DataConversion.Abstract
+{
+Parameter DESCRIPTION = "TC-475114: Conversion Routine per le traduzioni dei campi di varie maschere dei Report Standard [webcommon.report.custom]";
+Parameter MULTIPROCESS = 0;
+ClassMethod Main() As %Status
+{
+   /// This conversion routine will XML load a translation type forcibly due to once only nature of the code table
+   set sc=$$$OK
+   set sc=$$$ADDSC(sc,$$$LoadStreamXData($CLASSNAME(), "Translation1", "0C3CE7CE-2F4A-11F0-9B53-005056B4CACA"))
+   set sc=$$$ADDSC(sc,$$$LoadStreamXData($CLASSNAME(), "Translation2", "4F30E703-3ADA-11F0-9B53-005056B4CACA"))
+   set sc=$$$ADDSC(sc,$$$LoadStreamXData($CLASSNAME(), "Translation3", "9F0A66F8-C508-11EB-9F05-005056B4CD4B"))
+   set sc=$$$ADDSC(sc,$$$LoadStreamXData($CLASSNAME(), "Translation4", "27CEC665-36F8-11F0-9B53-005056B4CACA"))
+   set sc=$$$ADDSC(sc,$$$LoadStreamXData($CLASSNAME(), "Translation5", "42C4B79C-3645-11F0-9B53-005056B4CACA"))
+   set sc=$$$ADDSC(sc,$$$LoadStreamXData($CLASSNAME(), "Translation6", "241B331A-2512-11F0-9B53-005056B4CACA"))
+   set sc=$$$ADDSC(sc,$$$LoadStreamXData($CLASSNAME(), "Translation7", "356EB93A-25BE-11F0-9B53-005056B4CACA"))
+   set sc=$$$ADDSC(sc,$$$LoadStreamXData($CLASSNAME(), "Translation8", "681BF915-3A00-11F0-9B53-005056B4CACA"))
+   set sc=$$$ADDSC(sc,$$$LoadStreamXData($CLASSNAME(), "Translation9", "4703D2E0-16E4-11F0-831F-005056B4CACA"))
+   set sc=$$$ADDSC(sc,$$$LoadStreamXData($CLASSNAME(), "Translation10", "47306350-29AE-11F0-9B53-005056B4CACA"))
+   set sc=$$$ADDSC(sc,$$$LoadStreamXData($CLASSNAME(), "Translation11", "84667545-3651-11F0-9B53-005056B4CACA"))
+   set sc=$$$ADDSC(sc,$$$LoadStreamXData($CLASSNAME(), "Translation12", "ABF3A27E-2CE6-11F0-9B53-005056B4CACA"))
+   set sc=$$$ADDSC(sc,$$$LoadStreamXData($CLASSNAME(), "Translation13", "B99CDEED-37DD-11F0-9B53-005056B4CACA"))
+   set sc=$$$ADDSC(sc,$$$LoadStreamXData($CLASSNAME(), "Translation14", "CC92E349-2C0D-11F0-9B53-005056B4CACA"))
+   set sc=$$$ADDSC(sc,$$$LoadStreamXData($CLASSNAME(), "Translation15", "F664BFDB-316D-11F0-9B53-005056B4CACA"))
+   quit sc
+}
+
+ XData Translation1
+{
+   <?xml version="1.0" encoding="UTF-8"?>
+<Export>
+  <websys.TranslationType GUID="0C3CE7CE-2F4A-11F0-9B53-005056B4CACA">
+    <Type>COMP</Type>
+    <LanguageDR>ECE003D1-C97D-4C8A-9D59-BCBD85F32763</LanguageDR>
+    <Component>AF4F1ECE-AE86-4320-9D41-0A99A353A40C</Component>
+    <Context>
+      <Prefix>R</Prefix>
+      <ObjectReference>746A277B-2F48-11F0-9B53-005056B4CACA</ObjectReference>
+    </Context>
+    <Items>
+      <TranslationTypeItem GUID="86A61CD2-2FE9-11F0-9B53-005056B4CACA">
+        <Name>M</Name>
+        <Value>Ritiro dimissione finale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Ritiro dimissione finale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="1E197DB0-72D4-11F0-98CB-005056B4CACA">
+        <Name>Preview</Name>
+        <Value>Anteprima^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Anteprima</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="21AF6FF6-72D4-11F0-98CB-005056B4CACA">
+        <Name>Print</Name>
+        <Value>Stampa^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Stampa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="1191B117-72D4-11F0-98CB-005056B4CACA">
+        <Name>custom1</Name>
+        <Value>Ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="1A549227-72D4-11F0-98CB-005056B4CACA">
+        <Name>custom2</Name>
+        <Value>Unità operativa^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Unità operativa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="0810CA50-72D4-11F0-98CB-005056B4CACA">
+        <Name>datefrom</Name>
+        <Value>Dalla data^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Dalla data</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="0BF595A4-72D4-11F0-98CB-005056B4CACA">
+        <Name>dateto</Name>
+        <Value>Alla data^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Alla data</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="0C3D7542-2F4A-11F0-9B53-005056B4CACA">
+        <Name>deletecustom1list</Name>
+        <Value>Elimina ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="0D365416-2F4A-11F0-9B53-005056B4CACA">
+        <Name>deletecustom2list</Name>
+        <Value>Elimina unità operativa^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina unità operativa</Caption>
+      </TranslationTypeItem>
+    </Items>
+  </websys.TranslationType>
+  <Information GUID="0C3CE7CE-2F4A-11F0-9B53-005056B4CACA">
+    <Id>COMP||96||1906R1322</Id>
+    <ClassName>websys.TranslationType</ClassName>
+    <Description>COMP961906R1322</Description>
+    <Content>
+      <Version Class="websys.TranslationType">0</Version>
+      <Version Class="websys.TranslationTypeItem">0</Version>
+    </Content>
+  </Information>
+</Export>
+}
+
+ XData Translation2
+{
+   <?xml version="1.0" encoding="UTF-8"?>
+<Export>
+  <websys.TranslationType GUID="4F30E703-3ADA-11F0-9B53-005056B4CACA">
+    <Type>COMP</Type>
+    <LanguageDR>ECE003D1-C97D-4C8A-9D59-BCBD85F32763</LanguageDR>
+    <Component>AF4F1ECE-AE86-4320-9D41-0A99A353A40C</Component>
+    <Context>
+      <Prefix>R</Prefix>
+      <ObjectReference>9071B5CF-3AD9-11F0-9B53-005056B4CACA</ObjectReference>
+    </Context>
+    <Items>
+      <TranslationTypeItem GUID="84528351-3AE2-11F0-9B53-005056B4CACA">
+        <Name>M</Name>
+        <Value>Primi 50 farmaci in base al costo^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Primi 50 farmaci in base al costo</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="77B9E61C-72D7-11F0-98CB-005056B4CACA">
+        <Name>Preview</Name>
+        <Value>Anteprima^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Anteprima</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="7E359571-72D7-11F0-98CB-005056B4CACA">
+        <Name>Print</Name>
+        <Value>Stampa^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Stampa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="68BA205F-72D7-11F0-98CB-005056B4CACA">
+        <Name>custom1</Name>
+        <Value>Ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="68C1DE32-72D7-11F0-98CB-005056B4CACA">
+        <Name>custom1list</Name>
+        <Value>Ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="A99FF77A-3AE2-11F0-9B53-005056B4CACA">
+        <Name>custom4</Name>
+        <Value>Tipo episodio^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Tipo episodio</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="529613BE-72D7-11F0-98CB-005056B4CACA">
+        <Name>datefrom</Name>
+        <Value>Dalla data^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Dalla data</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="4F31EF1F-3ADA-11F0-9B53-005056B4CACA">
+        <Name>deletecustom1list</Name>
+        <Value>Elimina ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina ospedale</Caption>
+      </TranslationTypeItem>
+    </Items>
+  </websys.TranslationType>
+  <Information GUID="4F30E703-3ADA-11F0-9B53-005056B4CACA">
+    <Id>COMP||96||1906R1336</Id>
+    <ClassName>websys.TranslationType</ClassName>
+    <Description>COMP961906R1336</Description>
+    <Content>
+      <Version Class="websys.TranslationType">0</Version>
+      <Version Class="websys.TranslationTypeItem">0</Version>
+    </Content>
+  </Information>
+</Export>
+}
+
+ XData Translation3
+{
+   <?xml version="1.0" encoding="UTF-8"?>
+<Export>
+  <websys.TranslationType GUID="9F0A66F8-C508-11EB-9F05-005056B4CD4B">
+    <Type>COMP</Type>
+    <LanguageDR>ECE003D1-C97D-4C8A-9D59-BCBD85F32763</LanguageDR>
+    <Component>AF4F1ECE-AE86-4320-9D41-0A99A353A40C</Component>
+    <Context>
+      <Prefix>R</Prefix>
+      <ObjectReference>CDBCD560-C505-11EB-8439-005056B4CD4B</ObjectReference>
+    </Context>
+    <Items>
+      <TranslationTypeItem GUID="22CCD708-3BC5-11F0-9B53-005056B4CACA">
+        <Name>M</Name>
+        <Value>Attivita' di preparazione dei farmaci antiblastici^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Attivita' di preparazione dei farmaci antiblastici</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="31FFE9C7-3C73-11F0-9B53-005056B4CACA">
+        <Name>Preview</Name>
+        <Value>Anteprima^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Anteprima</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="B54BFECC-72D7-11F0-98CB-005056B4CACA">
+        <Name>Print</Name>
+        <Value>Stampa^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Stampa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="9F699498-C508-11EB-9F05-005056B4CD4B">
+        <Name>custom1</Name>
+        <Value>Ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="CC5F21EE-274A-11EC-9797-005056B4CD4B">
+        <Name>custom11</Name>
+        <Value>Utente^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Utente</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="8399D27A-2749-11EC-AAD9-005056B4CD4B">
+        <Name>custom12</Name>
+        <Value>Utente^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Utente</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="9FAAB7C0-C508-11EB-9F05-005056B4CD4B">
+        <Name>custom2</Name>
+        <Value>Unità Operativa^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Unità Operativa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="E14C8240-C520-11EB-8CCD-005056B4CD4B">
+        <Name>custom3</Name>
+        <Value>Utente^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Utente</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="8C06A290-C9C9-11EB-ABE9-005056B4CD4B">
+        <Name>custom4</Name>
+        <Value>Utente^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Utente</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="9F4A0D76-C508-11EB-9F05-005056B4CD4B">
+        <Name>custom9</Name>
+        <Value>Azienda Sanitaria^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Azienda Sanitaria</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="9F0AA550-C508-11EB-9F05-005056B4CD4B">
+        <Name>datefrom</Name>
+        <Value>Da data^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Da data</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="9F2A9B12-C508-11EB-9F05-005056B4CD4B">
+        <Name>dateto</Name>
+        <Value>A data^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>A data</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="CC919D5E-274A-11EC-9797-005056B4CD4B">
+        <Name>deletecustom11list</Name>
+        <Value>Elimina Utente^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina Utente</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="9F888268-C508-11EB-9F05-005056B4CD4B">
+        <Name>deletecustom1list</Name>
+        <Value>Rimuovi ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Rimuovi ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="9FCB7460-C508-11EB-9F05-005056B4CD4B">
+        <Name>deletecustom2list</Name>
+        <Value>Rimuovi U.O.^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Rimuovi U.O.</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="5563949C-2751-11EC-B783-005056B4CD4B">
+        <Name>deletecustom3list</Name>
+        <Value>Elimina utente^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina utente</Caption>
+      </TranslationTypeItem>
+    </Items>
+  </websys.TranslationType>
+  <Information GUID="9F0A66F8-C508-11EB-9F05-005056B4CD4B">
+    <Id>COMP||96||1906R911</Id>
+    <ClassName>websys.TranslationType</ClassName>
+    <Description>COMP961906R911</Description>
+    <Content>
+      <Version Class="websys.TranslationType">0</Version>
+      <Version Class="websys.TranslationTypeItem">0</Version>
+    </Content>
+  </Information>
+</Export>
+}
+
+ XData Translation4
+{
+   <?xml version="1.0" encoding="UTF-8"?>
+<Export>
+  <websys.TranslationType GUID="27CEC665-36F8-11F0-9B53-005056B4CACA">
+    <Type>COMP</Type>
+    <LanguageDR>ECE003D1-C97D-4C8A-9D59-BCBD85F32763</LanguageDR>
+    <Component>AF4F1ECE-AE86-4320-9D41-0A99A353A40C</Component>
+    <Context>
+      <Prefix>R</Prefix>
+      <ObjectReference>DBA83BEA-3619-11F0-9B53-005056B4CACA</ObjectReference>
+    </Context>
+    <Items>
+      <TranslationTypeItem GUID="A2D782B4-36FA-11F0-9B53-005056B4CACA">
+        <Name>M</Name>
+        <Value>Prenotazioni in lista di attesa eliminate^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Prenotazioni in lista di attesa eliminate</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="92C48827-72D4-11F0-98CB-005056B4CACA">
+        <Name>Preview</Name>
+        <Value>Anteprima^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Anteprima</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="967F3514-72D4-11F0-98CB-005056B4CACA">
+        <Name>Print</Name>
+        <Value>Stampa^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Stampa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="A2F6E3F4-36FA-11F0-9B53-005056B4CACA">
+        <Name>custom1</Name>
+        <Value>Priorità^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Priorità</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="A2FDE4DB-36FA-11F0-9B53-005056B4CACA">
+        <Name>custom11</Name>
+        <Value>Motivo eliminazione^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Motivo eliminazione</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="A30819EF-36FA-11F0-9B53-005056B4CACA">
+        <Name>custom12</Name>
+        <Value>Ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="8E14B7B4-72D4-11F0-98CB-005056B4CACA">
+        <Name>custom2</Name>
+        <Value>Unità operativa^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Unità operativa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="A30FD820-36FA-11F0-9B53-005056B4CACA">
+        <Name>custom3</Name>
+        <Value>Op. Sanitario^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Op. Sanitario</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="4C9E1010-3708-11F0-9B53-005056B4CACA">
+        <Name>datefrom</Name>
+        <Value>Da data cancellazione^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Da data cancellazione</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="4CB4627D-3708-11F0-9B53-005056B4CACA">
+        <Name>dateto</Name>
+        <Value>A data cancellazione^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>A data cancellazione</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="2A7C8101-36F8-11F0-9B53-005056B4CACA">
+        <Name>deletecustom11list</Name>
+        <Value>Elimina motivo eliminazione^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina motivo eliminazione</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="27CF716A-36F8-11F0-9B53-005056B4CACA">
+        <Name>deletecustom12list</Name>
+        <Value>Elimina ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="2B3F33B1-36F8-11F0-9B53-005056B4CACA">
+        <Name>deletecustom1list</Name>
+        <Value>Elimina priorità^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina priorità</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="28A077F2-36F8-11F0-9B53-005056B4CACA">
+        <Name>deletecustom2list</Name>
+        <Value>Elimina unità operativa^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina unità operativa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="29B03711-36F8-11F0-9B53-005056B4CACA">
+        <Name>deletecustom3list</Name>
+        <Value>Elimina op. sanitario^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina op. sanitario</Caption>
+      </TranslationTypeItem>
+    </Items>
+  </websys.TranslationType>
+  <Information GUID="27CEC665-36F8-11F0-9B53-005056B4CACA">
+    <Id>COMP||96||1906R1328</Id>
+    <ClassName>websys.TranslationType</ClassName>
+    <Description>COMP961906R1328</Description>
+    <Content>
+      <Version Class="websys.TranslationType">0</Version>
+      <Version Class="websys.TranslationTypeItem">0</Version>
+    </Content>
+  </Information>
+</Export>
+}
+
+ XData Translation5
+{
+   <?xml version="1.0" encoding="UTF-8"?>
+<Export>
+  <websys.TranslationType GUID="42C4B79C-3645-11F0-9B53-005056B4CACA">
+    <Type>COMP</Type>
+    <LanguageDR>ECE003D1-C97D-4C8A-9D59-BCBD85F32763</LanguageDR>
+    <Component>AF4F1ECE-AE86-4320-9D41-0A99A353A40C</Component>
+    <Context>
+      <Prefix>R</Prefix>
+      <ObjectReference>EEC0A09A-3642-11F0-9B53-005056B4CACA</ObjectReference>
+    </Context>
+    <Items>
+      <TranslationTypeItem GUID="972ED590-3647-11F0-9B53-005056B4CACA">
+        <Name>M</Name>
+        <Value>Registrazione nascite^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Registrazione nascite</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="6207DE73-72D4-11F0-98CB-005056B4CACA">
+        <Name>Preview</Name>
+        <Value>Anteprima^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Anteprima</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="660CE693-72D4-11F0-98CB-005056B4CACA">
+        <Name>Print</Name>
+        <Value>Stampa^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Stampa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="5E57966E-72D4-11F0-98CB-005056B4CACA">
+        <Name>custom1</Name>
+        <Value>Ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="B6877910-3647-11F0-9B53-005056B4CACA">
+        <Name>date1</Name>
+        <Value>Data di nascita^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Data di nascita</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="42C4EF00-3645-11F0-9B53-005056B4CACA">
+        <Name>deletecustom1list</Name>
+        <Value>Elimina ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina ospedale</Caption>
+      </TranslationTypeItem>
+    </Items>
+  </websys.TranslationType>
+  <Information GUID="42C4B79C-3645-11F0-9B53-005056B4CACA">
+    <Id>COMP||96||1906R1330</Id>
+    <ClassName>websys.TranslationType</ClassName>
+    <Description>COMP961906R1330</Description>
+    <Content>
+      <Version Class="websys.TranslationType">0</Version>
+      <Version Class="websys.TranslationTypeItem">0</Version>
+    </Content>
+  </Information>
+</Export>
+}
+
+ XData Translation6
+{
+   <?xml version="1.0" encoding="UTF-8"?>
+<Export>
+  <websys.TranslationType GUID="241B331A-2512-11F0-9B53-005056B4CACA">
+    <Type>COMP</Type>
+    <LanguageDR>ECE003D1-C97D-4C8A-9D59-BCBD85F32763</LanguageDR>
+    <Component>AF4F1ECE-AE86-4320-9D41-0A99A353A40C</Component>
+    <Context>
+      <Prefix>R</Prefix>
+      <ObjectReference>EF86B4D1-24EE-11F0-9B53-005056B4CACA</ObjectReference>
+    </Context>
+    <Items>
+      <TranslationTypeItem GUID="EE04E4A0-2512-11F0-9B53-005056B4CACA">
+        <Name>M</Name>
+        <Value>Pazienti in rientro^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Pazienti in rientro</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="6C4889E5-72D2-11F0-98CB-005056B4CACA">
+        <Name>Preview</Name>
+        <Value>Anteprima^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Anteprima</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="6FB7DA3D-72D2-11F0-98CB-005056B4CACA">
+        <Name>Print</Name>
+        <Value>Stampa^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Stampa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="5CBEE5BA-72D2-11F0-98CB-005056B4CACA">
+        <Name>custom1</Name>
+        <Value>Ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="654812F0-72D2-11F0-98CB-005056B4CACA">
+        <Name>custom2</Name>
+        <Value>Unità operativa^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Unità operativa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="3D1BB0E2-2513-11F0-9B53-005056B4CACA">
+        <Name>custom3</Name>
+        <Value>Corsia^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Corsia</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="46B4BD26-72D2-11F0-98CB-005056B4CACA">
+        <Name>datefrom</Name>
+        <Value>Dalla data^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Dalla data</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="4D8A6A80-72D2-11F0-98CB-005056B4CACA">
+        <Name>dateto</Name>
+        <Value>Alla data^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Alla data</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="241BB5EF-2512-11F0-9B53-005056B4CACA">
+        <Name>deletecustom1list</Name>
+        <Value>Elimina ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="24F980CE-2512-11F0-9B53-005056B4CACA">
+        <Name>deletecustom2list</Name>
+        <Value>Elimina unità operativa^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina unità operativa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="25D16982-2512-11F0-9B53-005056B4CACA">
+        <Name>deletecustom3list</Name>
+        <Value>Elimina corsia^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina corsia</Caption>
+      </TranslationTypeItem>
+    </Items>
+  </websys.TranslationType>
+  <Information GUID="241B331A-2512-11F0-9B53-005056B4CACA">
+    <Id>COMP||96||1906R1316</Id>
+    <ClassName>websys.TranslationType</ClassName>
+    <Description>COMP961906R1316</Description>
+    <Content>
+      <Version Class="websys.TranslationType">0</Version>
+      <Version Class="websys.TranslationTypeItem">0</Version>
+    </Content>
+  </Information>
+</Export>
+}
+
+ XData Translation7
+{
+   <?xml version="1.0" encoding="UTF-8"?>
+<Export>
+  <websys.TranslationType GUID="356EB93A-25BE-11F0-9B53-005056B4CACA">
+    <Type>COMP</Type>
+    <LanguageDR>ECE003D1-C97D-4C8A-9D59-BCBD85F32763</LanguageDR>
+    <Component>AF4F1ECE-AE86-4320-9D41-0A99A353A40C</Component>
+    <Context>
+      <Prefix>R</Prefix>
+      <ObjectReference>89AC6BAC-25BC-11F0-9B53-005056B4CACA</ObjectReference>
+    </Context>
+    <Items>
+      <TranslationTypeItem GUID="79A0807E-25BF-11F0-9B53-005056B4CACA">
+        <Name>M</Name>
+        <Value>Movimenti per corsia^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Movimenti per corsia</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="E5017EC4-72D2-11F0-98CB-005056B4CACA">
+        <Name>Preview</Name>
+        <Value>Anteprima^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Anteprima</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="E9417895-72D2-11F0-98CB-005056B4CACA">
+        <Name>Print</Name>
+        <Value>Stampa^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Stampa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="3640FEE8-25BE-11F0-9B53-005056B4CACA">
+        <Name>custom1</Name>
+        <Value>Ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="E0C90994-72D2-11F0-98CB-005056B4CACA">
+        <Name>custom1list</Name>
+        <Value>Ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="371B59B9-25BE-11F0-9B53-005056B4CACA">
+        <Name>custom4</Name>
+        <Value>Corsia^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Corsia</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="356F2F98-25BE-11F0-9B53-005056B4CACA">
+        <Name>datefrom</Name>
+        <Value>Da data^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Da data</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="35D5B40D-25BE-11F0-9B53-005056B4CACA">
+        <Name>dateto</Name>
+        <Value>A data^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>A data</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="367E9C5F-25BE-11F0-9B53-005056B4CACA">
+        <Name>deletecustom1list</Name>
+        <Value>Elimina ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina ospedale</Caption>
+      </TranslationTypeItem>
+    </Items>
+  </websys.TranslationType>
+  <Information GUID="356EB93A-25BE-11F0-9B53-005056B4CACA">
+    <Id>COMP||96||1906R1317</Id>
+    <ClassName>websys.TranslationType</ClassName>
+    <Description>COMP961906R1317</Description>
+    <Content>
+      <Version Class="websys.TranslationType">0</Version>
+      <Version Class="websys.TranslationTypeItem">0</Version>
+    </Content>
+  </Information>
+</Export>
+}
+
+ XData Translation8
+{
+   <?xml version="1.0" encoding="UTF-8"?>
+<Export>
+  <websys.TranslationType GUID="681BF915-3A00-11F0-9B53-005056B4CACA">
+    <Type>COMP</Type>
+    <LanguageDR>ECE003D1-C97D-4C8A-9D59-BCBD85F32763</LanguageDR>
+    <Component>AF4F1ECE-AE86-4320-9D41-0A99A353A40C</Component>
+    <Context>
+      <Prefix>R</Prefix>
+      <ObjectReference>C5945291-39FF-11F0-9B53-005056B4CACA</ObjectReference>
+    </Context>
+    <Items>
+      <TranslationTypeItem GUID="5A61599D-3A01-11F0-9B53-005056B4CACA">
+        <Name>M</Name>
+        <Value>Riepilogo nascite^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Riepilogo nascite</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="F8CB5BA2-72D4-11F0-98CB-005056B4CACA">
+        <Name>Preview</Name>
+        <Value>Anteprima^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Anteprima</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="FCE3254C-72D4-11F0-98CB-005056B4CACA">
+        <Name>Print</Name>
+        <Value>Stampa^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Stampa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="F58EBFCC-72D4-11F0-98CB-005056B4CACA">
+        <Name>custom1</Name>
+        <Value>Ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="F59587BB-72D4-11F0-98CB-005056B4CACA">
+        <Name>custom1list</Name>
+        <Value>Ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="83E4E970-3A02-11F0-9B53-005056B4CACA">
+        <Name>custom2</Name>
+        <Value>Op. Sanitario^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Op. Sanitario</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="5A89BCDC-3A01-11F0-9B53-005056B4CACA">
+        <Name>datefrom</Name>
+        <Value>Da data di nascita^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Da data di nascita</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="5A9F383C-3A01-11F0-9B53-005056B4CACA">
+        <Name>dateto</Name>
+        <Value>A data di nascita^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>A data di nascita</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="681C6805-3A00-11F0-9B53-005056B4CACA">
+        <Name>deletecustom1list</Name>
+        <Value>Elimina ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="69022F9E-3A00-11F0-9B53-005056B4CACA">
+        <Name>deletecustom2list</Name>
+        <Value>Elimina op. sanitario^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina op. sanitario</Caption>
+      </TranslationTypeItem>
+    </Items>
+  </websys.TranslationType>
+  <Information GUID="681BF915-3A00-11F0-9B53-005056B4CACA">
+    <Id>COMP||96||1906R1334</Id>
+    <ClassName>websys.TranslationType</ClassName>
+    <Description>COMP961906R1334</Description>
+    <Content>
+      <Version Class="websys.TranslationType">0</Version>
+      <Version Class="websys.TranslationTypeItem">0</Version>
+    </Content>
+  </Information>
+</Export>
+}
+
+ XData Translation9
+{
+   <?xml version="1.0" encoding="UTF-8"?>
+<Export>
+  <websys.TranslationType GUID="4703D2E0-16E4-11F0-831F-005056B4CACA">
+    <Type>COMP</Type>
+    <LanguageDR>ECE003D1-C97D-4C8A-9D59-BCBD85F32763</LanguageDR>
+    <Component>AF4F1ECE-AE86-4320-9D41-0A99A353A40C</Component>
+    <Context>
+      <Prefix>R</Prefix>
+      <ObjectReference>43F7CC9D-16E2-11F0-831F-005056B4CACA</ObjectReference>
+    </Context>
+    <Items>
+      <TranslationTypeItem GUID="7923F412-1919-11F0-831F-005056B4CACA">
+        <Name>M</Name>
+        <Value>Cancellazioni da lista di attesa^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Cancellazioni da lista di attesa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="B23B7E09-72D2-11F0-98CB-005056B4CACA">
+        <Name>Preview</Name>
+        <Value>Anteprima^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Anteprima</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="B6976412-72D2-11F0-98CB-005056B4CACA">
+        <Name>Print</Name>
+        <Value>Stampa^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Stampa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="B68DD9B6-16E5-11F0-831F-005056B4CACA">
+        <Name>custom1</Name>
+        <Value>Ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="B695DCFC-16E5-11F0-831F-005056B4CACA">
+        <Name>custom11</Name>
+        <Value>Motivo cancellazione^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Motivo cancellazione</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="AE5D4248-72D2-11F0-98CB-005056B4CACA">
+        <Name>custom1list</Name>
+        <Value>Ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="B69F6BC7-16E5-11F0-831F-005056B4CACA">
+        <Name>custom2</Name>
+        <Value>Tipo lista di attesa^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Tipo lista di attesa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="B6A721EA-16E5-11F0-831F-005056B4CACA">
+        <Name>custom3</Name>
+        <Value>Unità Operativa^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Unità Operativa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="B6C0ACE8-16E5-11F0-831F-005056B4CACA">
+        <Name>datefrom</Name>
+        <Value>Da data rimozione^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Da data rimozione</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="B6D943DD-16E5-11F0-831F-005056B4CACA">
+        <Name>dateto</Name>
+        <Value>A data rimozione^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>A data rimozione</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="491F6213-16E4-11F0-831F-005056B4CACA">
+        <Name>deletecustom11list</Name>
+        <Value>Elimina motivo cancellazione^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina motivo cancellazione</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="47042A8D-16E4-11F0-831F-005056B4CACA">
+        <Name>deletecustom1list</Name>
+        <Value>Elimina ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="47BEE0BD-16E4-11F0-831F-005056B4CACA">
+        <Name>deletecustom2list</Name>
+        <Value>Elimina tipo lista di attesa^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina tipo lista di attesa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="486E9E2E-16E4-11F0-831F-005056B4CACA">
+        <Name>deletecustom3list</Name>
+        <Value>Elimina unità operativa^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina unità operativa</Caption>
+      </TranslationTypeItem>
+    </Items>
+  </websys.TranslationType>
+  <Information GUID="4703D2E0-16E4-11F0-831F-005056B4CACA">
+    <Id>COMP||96||1906R1313</Id>
+    <ClassName>websys.TranslationType</ClassName>
+    <Description>COMP961906R1313</Description>
+    <Content>
+      <Version Class="websys.TranslationType">0</Version>
+      <Version Class="websys.TranslationTypeItem">0</Version>
+    </Content>
+  </Information>
+</Export>
+}
+
+ XData Translation10
+{
+   <?xml version="1.0" encoding="UTF-8"?>
+<Export>
+  <websys.TranslationType GUID="47306350-29AE-11F0-9B53-005056B4CACA">
+    <Type>COMP</Type>
+    <LanguageDR>ECE003D1-C97D-4C8A-9D59-BCBD85F32763</LanguageDR>
+    <Component>AF4F1ECE-AE86-4320-9D41-0A99A353A40C</Component>
+    <Context>
+      <Prefix>R</Prefix>
+      <ObjectReference>F218E7B7-29AB-11F0-9B53-005056B4CACA</ObjectReference>
+    </Context>
+    <Items>
+      <TranslationTypeItem GUID="5429CD93-29B1-11F0-9B53-005056B4CACA">
+        <Name>M</Name>
+        <Value>Registro Interventi^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Registro Interventi</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="D35AA462-45CE-11F0-A27E-005056B4CACA">
+        <Name>Print</Name>
+        <Value>Stampa^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Stampa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="30971253-72D3-11F0-98CB-005056B4CACA">
+        <Name>custom1</Name>
+        <Value>Ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="309E4FEE-72D3-11F0-98CB-005056B4CACA">
+        <Name>custom1list</Name>
+        <Value>Ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="476936C0-29AE-11F0-9B53-005056B4CACA">
+        <Name>custom4</Name>
+        <Value>Blocco Operatorio^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Blocco Operatorio</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="47A6A2E7-29AE-11F0-9B53-005056B4CACA">
+        <Name>custom5</Name>
+        <Value>Sala Operatoria^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Sala Operatoria</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="1C07484C-72D3-11F0-98CB-005056B4CACA">
+        <Name>datefrom</Name>
+        <Value>Dalla data^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Dalla data</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="2117B005-72D3-11F0-98CB-005056B4CACA">
+        <Name>dateto</Name>
+        <Value>Alla data^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Alla data</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="4730FD1D-29AE-11F0-9B53-005056B4CACA">
+        <Name>deletecustom1list</Name>
+        <Value>Elimina ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina ospedale</Caption>
+      </TranslationTypeItem>
+    </Items>
+  </websys.TranslationType>
+  <Information GUID="47306350-29AE-11F0-9B53-005056B4CACA">
+    <Id>COMP||96||1906R1318</Id>
+    <ClassName>websys.TranslationType</ClassName>
+    <Description>COMP961906R1318</Description>
+    <Content>
+      <Version Class="websys.TranslationType">0</Version>
+      <Version Class="websys.TranslationTypeItem">0</Version>
+    </Content>
+  </Information>
+</Export>
+}
+
+ XData Translation11
+{
+   <?xml version="1.0" encoding="UTF-8"?>
+<Export>
+  <websys.TranslationType GUID="84667545-3651-11F0-9B53-005056B4CACA">
+    <Type>COMP</Type>
+    <LanguageDR>ECE003D1-C97D-4C8A-9D59-BCBD85F32763</LanguageDR>
+    <Component>AF4F1ECE-AE86-4320-9D41-0A99A353A40C</Component>
+    <Context>
+      <Prefix>R</Prefix>
+      <ObjectReference>B31A76C4-3650-11F0-9B53-005056B4CACA</ObjectReference>
+    </Context>
+    <Items>
+      <TranslationTypeItem GUID="3FC4436A-3652-11F0-9B53-005056B4CACA">
+        <Name>M</Name>
+        <Value>Dimissioni previste^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Dimissioni previste</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="B6ACD8AF-72D4-11F0-98CB-005056B4CACA">
+        <Name>Preview</Name>
+        <Value>Anteprima^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Anteprima</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="BA8FBDEB-72D4-11F0-98CB-005056B4CACA">
+        <Name>Print</Name>
+        <Value>Stampa^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Stampa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="8466AF91-3651-11F0-9B53-005056B4CACA">
+        <Name>custom1</Name>
+        <Value>Ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="8515BBB9-3651-11F0-9B53-005056B4CACA">
+        <Name>custom2</Name>
+        <Value>Corsia^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Corsia</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="5D2D7A0F-3A3B-11F0-9B53-005056B4CACA">
+        <Name>datefrom</Name>
+        <Value>Da data dimissione prevista^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Da data dimissione prevista</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="65DA7693-3A3B-11F0-9B53-005056B4CACA">
+        <Name>dateto</Name>
+        <Value>A data dimissione prevista^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>A data dimissione prevista</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="848EB8A0-3651-11F0-9B53-005056B4CACA">
+        <Name>deletecustom1list</Name>
+        <Value>Elimina ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="8549F21E-3651-11F0-9B53-005056B4CACA">
+        <Name>deletecustom2list</Name>
+        <Value>Elimina corsia^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina corsia</Caption>
+      </TranslationTypeItem>
+    </Items>
+  </websys.TranslationType>
+  <Information GUID="84667545-3651-11F0-9B53-005056B4CACA">
+    <Id>COMP||96||1906R1331</Id>
+    <ClassName>websys.TranslationType</ClassName>
+    <Description>COMP961906R1331</Description>
+    <Content>
+      <Version Class="websys.TranslationType">0</Version>
+      <Version Class="websys.TranslationTypeItem">0</Version>
+    </Content>
+  </Information>
+</Export>
+}
+
+ XData Translation12
+{
+   <?xml version="1.0" encoding="UTF-8"?>
+<Export>
+  <websys.TranslationType GUID="ABF3A27E-2CE6-11F0-9B53-005056B4CACA">
+    <Type>COMP</Type>
+    <LanguageDR>ECE003D1-C97D-4C8A-9D59-BCBD85F32763</LanguageDR>
+    <Component>AF4F1ECE-AE86-4320-9D41-0A99A353A40C</Component>
+    <Context>
+      <Prefix>R</Prefix>
+      <ObjectReference>045AEA51-2CE6-11F0-9B53-005056B4CACA</ObjectReference>
+    </Context>
+    <Items>
+      <TranslationTypeItem GUID="8C0B3290-2CE7-11F0-9B53-005056B4CACA">
+        <Name>M</Name>
+        <Value>Fatture in Sospeso^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Fatture in Sospeso</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="83C5784E-72D3-11F0-98CB-005056B4CACA">
+        <Name>Preview</Name>
+        <Value>Anteprima^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Anteprima</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="8A3E31B3-72D3-11F0-98CB-005056B4CACA">
+        <Name>Print</Name>
+        <Value>Stampa^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Stampa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="7F8035DF-72D3-11F0-98CB-005056B4CACA">
+        <Name>custom1</Name>
+        <Value>Ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="A9C4C57D-2CE7-11F0-9B53-005056B4CACA">
+        <Name>custom8</Name>
+        <Value>N. Fatture^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>N. Fatture</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="A9D557C1-2CE7-11F0-9B53-005056B4CACA">
+        <Name>date1</Name>
+        <Value>Data di stampa^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Data di stampa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="8C334097-2CE7-11F0-9B53-005056B4CACA">
+        <Name>datefrom</Name>
+        <Value>Da data dimissione^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Da data dimissione</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="8C52B9E2-2CE7-11F0-9B53-005056B4CACA">
+        <Name>dateto</Name>
+        <Value>A data dimissione^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>A data dimissione</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="ABF40433-2CE6-11F0-9B53-005056B4CACA">
+        <Name>deletecustom1list</Name>
+        <Value>Elimina ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina ospedale</Caption>
+      </TranslationTypeItem>
+    </Items>
+  </websys.TranslationType>
+  <Information GUID="ABF3A27E-2CE6-11F0-9B53-005056B4CACA">
+    <Id>COMP||96||1906R1320</Id>
+    <ClassName>websys.TranslationType</ClassName>
+    <Description>COMP961906R1320</Description>
+    <Content>
+      <Version Class="websys.TranslationType">0</Version>
+      <Version Class="websys.TranslationTypeItem">0</Version>
+    </Content>
+  </Information>
+</Export>
+}
+
+ XData Translation13
+{
+   <?xml version="1.0" encoding="UTF-8"?>
+<Export>
+  <websys.TranslationType GUID="B99CDEED-37DD-11F0-9B53-005056B4CACA">
+    <Type>COMP</Type>
+    <LanguageDR>ECE003D1-C97D-4C8A-9D59-BCBD85F32763</LanguageDR>
+    <Component>AF4F1ECE-AE86-4320-9D41-0A99A353A40C</Component>
+    <Context>
+      <Prefix>R</Prefix>
+      <ObjectReference>B5F12F9A-37DC-11F0-9B53-005056B4CACA</ObjectReference>
+    </Context>
+    <Items>
+      <TranslationTypeItem GUID="326C1444-37E1-11F0-9B53-005056B4CACA">
+        <Name>M</Name>
+        <Value>Estrazione farmaci per sottocategoria^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Estrazione farmaci per sottocategoria</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="0D7240B7-72D7-11F0-98CB-005056B4CACA">
+        <Name>Preview</Name>
+        <Value>Anteprima^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Anteprima</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="111038E2-72D7-11F0-98CB-005056B4CACA">
+        <Name>Print</Name>
+        <Value>Stampa^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Stampa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="1DC41120-72D7-11F0-98CB-005056B4CACA">
+        <Name>custom1</Name>
+        <Value>Ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="1DCAEB31-72D7-11F0-98CB-005056B4CACA">
+        <Name>custom1list</Name>
+        <Value>Ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="03D27A7F-72D7-11F0-98CB-005056B4CACA">
+        <Name>datefrom</Name>
+        <Value>Dalla data^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Dalla data</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="081DD5BF-72D7-11F0-98CB-005056B4CACA">
+        <Name>dateto</Name>
+        <Value>Alla data^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Alla data</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="B99D54EE-37DD-11F0-9B53-005056B4CACA">
+        <Name>deletecustom1list</Name>
+        <Value>Elimina ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina ospedale</Caption>
+      </TranslationTypeItem>
+    </Items>
+  </websys.TranslationType>
+  <Information GUID="B99CDEED-37DD-11F0-9B53-005056B4CACA">
+    <Id>COMP||96||1906R1333</Id>
+    <ClassName>websys.TranslationType</ClassName>
+    <Description>COMP961906R1333</Description>
+    <Content>
+      <Version Class="websys.TranslationType">0</Version>
+      <Version Class="websys.TranslationTypeItem">0</Version>
+    </Content>
+  </Information>
+</Export>
+}
+
+ XData Translation14
+{
+   <?xml version="1.0" encoding="UTF-8"?>
+<Export>
+  <websys.TranslationType GUID="CC92E349-2C0D-11F0-9B53-005056B4CACA">
+    <Type>COMP</Type>
+    <LanguageDR>ECE003D1-C97D-4C8A-9D59-BCBD85F32763</LanguageDR>
+    <Component>AF4F1ECE-AE86-4320-9D41-0A99A353A40C</Component>
+    <Context>
+      <Prefix>R</Prefix>
+      <ObjectReference>3D77669B-2C0C-11F0-9B53-005056B4CACA</ObjectReference>
+    </Context>
+    <Items>
+      <TranslationTypeItem GUID="71BF3604-2C0F-11F0-9B53-005056B4CACA">
+        <Name>M</Name>
+        <Value>Elenco Pazienti Prenotati e Non Presentatisi^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elenco Pazienti Prenotati e Non Presentatisi</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="E356CB47-72D3-11F0-98CB-005056B4CACA">
+        <Name>Preview</Name>
+        <Value>Anteprima^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Anteprima</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="E739D5CC-72D3-11F0-98CB-005056B4CACA">
+        <Name>Print</Name>
+        <Value>Stampa^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Stampa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="CDA98C32-2C0D-11F0-9B53-005056B4CACA">
+        <Name>custom2</Name>
+        <Value>Unità Operativa^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Unità Operativa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="CE801847-2C0D-11F0-9B53-005056B4CACA">
+        <Name>custom3</Name>
+        <Value>Op. sanitario^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Op. sanitario</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="CD67F1E2-2C0D-11F0-9B53-005056B4CACA">
+        <Name>custom5</Name>
+        <Value>Azienda^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Azienda</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="CC936E57-2C0D-11F0-9B53-005056B4CACA">
+        <Name>datefrom</Name>
+        <Value>Da data^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Da data</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="CCFBF3C9-2C0D-11F0-9B53-005056B4CACA">
+        <Name>dateto</Name>
+        <Value>A data^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>A data</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="CDEDB964-2C0D-11F0-9B53-005056B4CACA">
+        <Name>deletecustom2list</Name>
+        <Value>Elimina unità operativa^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina unità operativa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="CEC72C12-2C0D-11F0-9B53-005056B4CACA">
+        <Name>deletecustom3list</Name>
+        <Value>Elimina op. sanitario^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina op. sanitario</Caption>
+      </TranslationTypeItem>
+    </Items>
+  </websys.TranslationType>
+  <Information GUID="CC92E349-2C0D-11F0-9B53-005056B4CACA">
+    <Id>COMP||96||1906R1319</Id>
+    <ClassName>websys.TranslationType</ClassName>
+    <Description>COMP961906R1319</Description>
+    <Content>
+      <Version Class="websys.TranslationType">0</Version>
+      <Version Class="websys.TranslationTypeItem">0</Version>
+    </Content>
+  </Information>
+</Export>
+}
+
+ XData Translation15
+{
+   <?xml version="1.0" encoding="UTF-8"?>
+<Export>
+  <websys.TranslationType GUID="F664BFDB-316D-11F0-9B53-005056B4CACA">
+    <Type>COMP</Type>
+    <LanguageDR>ECE003D1-C97D-4C8A-9D59-BCBD85F32763</LanguageDR>
+    <Component>AF4F1ECE-AE86-4320-9D41-0A99A353A40C</Component>
+    <Context>
+      <Prefix>R</Prefix>
+      <ObjectReference>78148B51-316C-11F0-9B53-005056B4CACA</ObjectReference>
+    </Context>
+    <Items>
+      <TranslationTypeItem GUID="9321AB1C-316E-11F0-9B53-005056B4CACA">
+        <Name>M</Name>
+        <Value>Preavviso lista di attesa^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Preavviso lista di attesa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="BB231313-72D3-11F0-98CB-005056B4CACA">
+        <Name>Preview</Name>
+        <Value>Anteprima^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Anteprima</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="BF915434-72D3-11F0-98CB-005056B4CACA">
+        <Name>Print</Name>
+        <Value>Stampa^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Stampa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="B6CDBAEE-72D3-11F0-98CB-005056B4CACA">
+        <Name>custom1</Name>
+        <Value>Ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="C624FEF1-316E-11F0-9B53-005056B4CACA">
+        <Name>custom11</Name>
+        <Value>Op. sanitario^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Op. sanitario</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="F699B3EF-316E-11F0-9B53-005056B4CACA">
+        <Name>custom12</Name>
+        <Value>Priorità^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Priorità</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="B6F94092-72D3-11F0-98CB-005056B4CACA">
+        <Name>custom1list</Name>
+        <Value>Ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="64938342-316F-11F0-9B53-005056B4CACA">
+        <Name>custom2</Name>
+        <Value>Preavviso^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Preavviso</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="7E1488BC-316F-11F0-9B53-005056B4CACA">
+        <Name>custom3</Name>
+        <Value>Unità Operativa^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Unità Operativa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="2A8C24CA-316F-11F0-9B53-005056B4CACA">
+        <Name>custom8</Name>
+        <Value>Stato lista di attesa^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Stato lista di attesa</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="9DB4DCEF-316F-11F0-9B53-005056B4CACA">
+        <Name>date1</Name>
+        <Value>Dalla data^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Dalla data</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="9DD3D5C3-316F-11F0-9B53-005056B4CACA">
+        <Name>date2</Name>
+        <Value>Alla data^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Alla data</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="9DC34EAC-316F-11F0-9B53-005056B4CACA">
+        <Name>datefrom</Name>
+        <Value>Dalla data^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Dalla data</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="9DE29094-316F-11F0-9B53-005056B4CACA">
+        <Name>dateto</Name>
+        <Value>Alla data^0</Value>
+        <IsPermanent>false</IsPermanent>
+        <Caption>Alla data</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="F822927F-316D-11F0-9B53-005056B4CACA">
+        <Name>deletecustom11list</Name>
+        <Value>Elimina op. sanitario^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina op. sanitario</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="F905C123-316D-11F0-9B53-005056B4CACA">
+        <Name>deletecustom12list</Name>
+        <Value>Elimina priorità^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina priorità</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="F6654989-316D-11F0-9B53-005056B4CACA">
+        <Name>deletecustom1list</Name>
+        <Value>Elimina ospedale^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina ospedale</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="F9E2D60F-316D-11F0-9B53-005056B4CACA">
+        <Name>deletecustom2list</Name>
+        <Value>Elimina preavviso^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina preavviso</Caption>
+      </TranslationTypeItem>
+      <TranslationTypeItem GUID="F741C20B-316D-11F0-9B53-005056B4CACA">
+        <Name>deletecustom3list</Name>
+        <Value>Elimina unità operativa^1</Value>
+        <IsPermanent>true</IsPermanent>
+        <Caption>Elimina unità operativa</Caption>
+      </TranslationTypeItem>
+    </Items>
+  </websys.TranslationType>
+  <Information GUID="F664BFDB-316D-11F0-9B53-005056B4CACA">
+    <Id>COMP||96||1906R1326</Id>
+    <ClassName>websys.TranslationType</ClassName>
+    <Description>COMP961906R1326</Description>
+    <Content>
+      <Version Class="websys.TranslationType">0</Version>
+      <Version Class="websys.TranslationTypeItem">0</Version>
+    </Content>
+  </Information>
+</Export>
+}
+}

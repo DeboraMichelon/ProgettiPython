@@ -2,6 +2,9 @@ import random
 from datetime import datetime
 import math
 from flask import Flask, request, render_template
+import threading
+import time
+import webbrowser
 
 app = Flask(__name__)
 
@@ -37,5 +40,10 @@ def NumImpegnativa():
     numeroImpegnativa = codRegione + year[-2:] + cifre + modulo
     return render_template("gui.html", numero=numeroImpegnativa, subregion=subregion)
 
+def apri_browser():
+    #time.sleep(3)  # Attendi che il server sia avviato
+    webbrowser.get('windows-default').open_new("http://127.0.0.1:5000/")
+
 if __name__ == '__main__':
+    threading.Thread(target=apri_browser).start()
     app.run()
