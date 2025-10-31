@@ -1,0 +1,3 @@
+Creare GUI che permetta di scegliere uno scarico e caricare dei file txt
+Il file txt viene associato in base al nome del file al tracciato txt che contiene le info sui nomi dei campi e le posizioni
+Viene restituito un file in formato CSV che esegue il parsing dei file txt
