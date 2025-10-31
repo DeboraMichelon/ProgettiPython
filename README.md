@@ -8,3 +8,6 @@ NumeroImpegnativaBrowser
   Serve a generare numeri di ricetta rossa in base alla Sub-Region scelta.
   Eseguendo lo script python viene aperta nel browser di default una gui che permette di scegliere la subregion per cui si vuole creare un numero di ricetta rossa.
   Il numero di ricetta generato viene mostrato nella gui, da cui è possibile copiarlo.
+
+ParsingTXTScarichi
+  Serve a restituire un file CSV che è poi facilmente importabile in Excel a partire da un file TXT posizionale di un export statutory.
