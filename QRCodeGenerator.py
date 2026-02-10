@@ -3,8 +3,7 @@ import os
 
 # URL da aprire
 urls = [
-    "https://maps.app.goo.gl/cLMQRg3vQPeFsbZ46", #Day1, ItinerarioA
-    "https://maps.app.goo.gl/ZX2mEnfbT1VDUNg18"  #Day1, ItinerarioB
+    "https://www.amazon.it/gp/r.html?C=1I2QPH0S94DBO&M=urn:rtn:msg:2025122215291876e1baae5289411d9b9fc46d5cd0p0eu&R=2JWQWDSI3W3KQ&T=C&U=https%3A%2F%2Fwww.amazon.it%3Fref_%3Dpe_105482371_1093156431&H=MBVMAYYZFCCTEFSMUMKKB2Q8NBYA&ref_=pe_105482371_1093156431"
 ]
 
 # Definizione del path dove salvare i qrcodes generati
