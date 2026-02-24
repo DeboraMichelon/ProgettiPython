@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion Routine Traduzioni</title>
+    <style>
+        html, body {
+            background-color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+        .button {
+            border: none;
+            color: whitesmoke;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 15px 10px;
+            cursor: pointer;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: #008CBA;
+        }
+        .write {
+            color: #008CBA;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .hidden-file {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="write" style="margin: 15px 10px;">Generatore Conversion Routines Traduzioni</h1>
+
+    <label class="write" style="font-size: 16px; margin: 15px 10px;">Iserisci il numero e il titolo del Jira</label><br>
+    <input id="numJira" class="write" style="font-size: 12px; text-align: left; padding: 10px 15px; margin: 15px 10px; width: 100px;" placeholder="TC-123456" name="NumJira"><br>
+    <input id="descJira" class="write" style="font-size: 12px; text-align: left; padding: 10px 15px; margin: 5px 10px; width: 1000px;" placeholder="Titolo del Jira" name="DescJira"><br>
+
+    <div style="display:flex; align-items:center;">
+        <label for="fileInput" class="button">Scegli i file</label>
+        <span id="file-chosen" class="write" style="font-size: 16px; margin: 15px 10px; font-style: italic;">Nessun file selezionato</span><br>
+    </div>
+    <input type="file" id="fileInput" class="hidden-file" multiple accept=".xml" name="files">
+
+    <label class="write" style="font-size: 16px; margin: 15px 10px;">Scegli il tipo di conversion routine che vuoi generare:</label>
+    <br>
+    <div>
+        <button id="btnAuto" type="button" class="button">Automatica</button>
+        <button id="btnManuale" type="button" class="button">Manuale</button>
+    </div>
+
+    <div id="errorBox" class="write" style="margin: 15px 10px; color: chartreuse; display: none;"></div>
+
+    <div id="resultBox" class="write" style="margin: 15px 10px; display: none;">
+        <h2>Informazioni ricevute</h2>
+        <p id="jiraInfo"></p>
+        <p id="numFilesInfo"></p>
+        <p id="tipoInfo"></p>
+        <h3>Conversion routine generata:</h3>
+        <p>File pronto: <strong id="nomeFileInfo"></strong></p>
+        <a id="downloadLink" class="button" href="#" download>Scarica il file generato</a>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const fileChosen = document.getElementById('file-chosen');
+        const errorBox = document.getElementById('errorBox');
+        const resultBox = document.getElementById('resultBox');
+        const jiraInfo = document.getElementById('jiraInfo');
+        const numFilesInfo = document.getElementById('numFilesInfo');
+        const tipoInfo = document.getElementById('tipoInfo');
+        const nomeFileInfo = document.getElementById('nomeFileInfo');
+        const downloadLink = document.getElementById('downloadLink');
+
+        let currentDownloadUrl = null;
+
+        fileInput.addEventListener('change', function () {
+            const count = this.files.length;
+            if (count === 0) {
+                fileChosen.textContent = 'Nessun file selezionato';
+            } else if (count === 1) {
+                fileChosen.textContent = '1 file selezionato';
+            } else {
+                fileChosen.textContent = count + ' file selezionati';
+            }
+        });
+
+        document.getElementById('btnAuto').addEventListener('click', () => generateRoutine('Automatica'));
+        document.getElementById('btnManuale').addEventListener('click', () => generateRoutine('Manuale'));
+
+        async function generateRoutine(tipoCR) {
+            hideError();
+            hideResult();
+
+            const NumJira = document.getElementById('numJira').value;
+            const DescJira = document.getElementById('descJira').value;
+            const files = Array.from(fileInput.files || []);
+            const numFiles = files.length;
+
+            if (!NumJira || !DescJira || !tipoCR || numFiles === 0) {
+                showError('Attenzione: compilare tutti i campi e caricare almeno un file XML.');
+                return;
+            }
+
+            let Conversion = 'Include Region.ITXX.Main';
+            let Classe = '';
+
+            if (NumJira && DescJira && tipoCR && numFiles) {
+                if (tipoCR === 'Automatica') {
+                    Classe = 'Region.ITXX.Convert.';
+                } else if (tipoCR === 'Manuale') {
+                    Classe = 'Region.ITXX.Conversions.';
+                }
+
+                Classe += NumJira.replace(/-/g, '');
+                Conversion += '\nClass ' + Classe + ' Extends websys.DataConversion.Abstract';
+                Conversion += '\n{';
+                Conversion += '\nParameter DESCRIPTION = "' + (NumJira + ': ' + DescJira) + '";';
+                Conversion += '\nParameter MULTIPROCESS = 0;';
+                Conversion += '\nClassMethod Main() As %Status';
+                Conversion += '\n{';
+                Conversion += '\n   /// This conversion routine will XML load a translation type forcibly due to once only nature of the code table';
+                Conversion += '\n   set sc=$$$OK';
+
+                const fileContent = [];
+
+                for (const file of files) {
+                    const xml_content = await file.text();
+                    let guid = null;
+
+                    try {
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(xml_content, 'application/xml');
+
+                        if (doc.querySelector('parsererror')) {
+                            throw new Error('XML non valido');
+                        }
+
+                        let elem = doc.getElementsByTagName('websys.TranslationType')[0];
+                        if (elem && elem.hasAttribute('GUID')) {
+                            guid = elem.getAttribute('GUID');
+                        }
+
+                        if (guid === null) {
+                            elem = doc.getElementsByTagName('websys.DictionaryTranslated')[0];
+                            if (elem && elem.hasAttribute('GUID')) {
+                                guid = elem.getAttribute('GUID');
+                            }
+                        }
+
+                        if (guid === null) {
+                            elem = doc.getElementsByTagName('websys.TranslationEPR')[0];
+                            if (elem && elem.hasAttribute('GUID')) {
+                                guid = elem.getAttribute('GUID');
+                            }
+                        }
+                    } catch (e) {
+                        guid = null;
+                    }
+
+                    fileContent.push({ GUID: guid, contenuto: xml_content });
+                }
+
+                fileContent.forEach((file_info, index) => {
+                    const guidNum = index + 1;
+                    Conversion += '\n   set sc=$$$ADDSC(sc,$$$LoadStreamXData($CLASSNAME(), "Translation' + guidNum + '", "' + file_info.GUID + '"))';
+                });
+
+                Conversion += '\n   quit sc';
+                Conversion += '\n}';
+
+                fileContent.forEach((file_info, index) => {
+                    const guidNum = index + 1;
+                    Conversion += '\n\n XData Translation' + guidNum;
+                    Conversion += '\n{';
+                    Conversion += '\n   ' + file_info.contenuto;
+                    Conversion += '\n}';
+                });
+
+                Conversion += '\n}';
+            }
+
+            const nomeFile = Classe + '.txt';
+            const blob = new Blob([Conversion], { type: 'text/plain;charset=utf-8' });
+
+            if (currentDownloadUrl) {
+                URL.revokeObjectURL(currentDownloadUrl);
+            }
+
+            currentDownloadUrl = URL.createObjectURL(blob);
+            downloadLink.href = currentDownloadUrl;
+            downloadLink.download = nomeFile;
+
+            jiraInfo.textContent = NumJira + ': ' + DescJira;
+            numFilesInfo.textContent = 'Numero file XML caricati: ' + numFiles;
+            tipoInfo.textContent = 'Tipo Conversion Routine: ' + tipoCR;
+            nomeFileInfo.textContent = nomeFile;
+
+            showResult();
+        }
+
+        function showError(msg) {
+            errorBox.textContent = msg;
+            errorBox.style.display = 'block';
+        }
+
+        function hideError() {
+            errorBox.textContent = '';
+            errorBox.style.display = 'none';
+        }
+
+        function showResult() {
+            resultBox.style.display = 'block';
+        }
+
+        function hideResult() {
+            resultBox.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
